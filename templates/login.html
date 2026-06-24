@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container{
+            width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input{
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+  <body>
+    <div class="container">
+      <h1>Login to Your Account</h1>
+      <form method="POST">
+        <input type="text" name="username" placeholder="Enter username" required><br>
+        <input type="password" name="password" placeholder="Enter password" required><br>
+        <button type="submit">Login</button>
+    </form>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+  </div>
+  </body>
+</html>
