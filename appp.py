@@ -142,6 +142,20 @@ def download(filename):
         'Content-Disposition': f'attachment; filename={filename}'
     }
 
+@app.route('/delete/<filename>')
+def delete(filename):
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
+    user_folder = os.path.join(app.config['UPLOAD_FOLDER'], session['user'])
+
+    file_path = os.path.join(user_folder, filename)
+
+    if os.path.exists(file_path):
+        os.remove(file_path)
+
+    return redirect(url_for('files'))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
