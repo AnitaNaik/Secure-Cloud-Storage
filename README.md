@@ -84,8 +84,6 @@ http://127.0.0.1:5000
 
 Anita Naik
 
-## Screenshots
-
 ### Home Page
 ![Home Page](screenshots/Home.png)
 
@@ -100,6 +98,3 @@ Anita Naik
 
 ### Files Page
 ![Files Page](screenshots/Files.png)
-
-### Options Page
-![Options Page](screenshots/Options.png)
