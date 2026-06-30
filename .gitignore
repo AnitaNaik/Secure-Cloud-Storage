@@ -1,0 +1,4 @@
+__pyache__/
+uploads/
+secure_storage.db
+secret.key
