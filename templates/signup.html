@@ -2,35 +2,19 @@
 <html>
 
 <head>
-    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+    <title>Secure Cloud Storage</title>
 
-        .container{
-            width: 400px;
-            margin: 100px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
-        }
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        input{
-            width: 95%;
-            padding: 10px;
-            margin: 8px 0;
-        }
-
-        button{
-            padding: 10px 20px;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
 
 <div class="container">
@@ -45,6 +29,9 @@
         <input type="password" name="password" required><br>
 
         <button type="submit">Register</button>
+        {% if error %}
+            <p style="color:red; margin-top:10px;">{{ error }}</p>
+        {% endif %}
     </form>
 
     <br>

@@ -1,50 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Your Files</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+    <title>Secure Cloud Storage</title>
 
-        .container{
-            width: 600px;
-            margin: 100px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
-        }
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        ul{
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li{
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        a{
-            text-decoration: none;
-        }
-
-        .btn{
-            display: inline-block;
-            padding: 8px 15px;
-            border: 1px solid gray;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<div class="container">
+<div class="container files-container">
 
     <h2>Your Uploaded Files 📂</h2>
 
@@ -52,17 +25,37 @@
 
     <br><br>
 
-    <ul>
-        {% for file in files %}
-        <li>
-            {{ file }}
-            |
-            <a href="/download/{{ file }}">Download</a>
-|
-            <a href="/delete/{{ file }}">Delete</a>
-        </li>
-        {% endfor %}
-    </ul>
+    {% for file in files %}
+
+<div class="file-card">
+
+    <div>
+        <h3>📄 {{ file }}</h3>
+        <p class="status">🔒 Encrypted</p>
+    </div>
+
+    <div class="menu">
+
+        <button class="menu-btn">⋮</button>
+
+        <div class="menu-content">
+
+            <a href="/download/{{ file }}">⬇ Download</a>
+
+            <a href="/delete/{{ file }}"
+            onclick="return confirm('Delete this file?')">
+
+            🗑 Delete
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
 
     <br>
 

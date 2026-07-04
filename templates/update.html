@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Upload File</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Cloud Storage</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body style="font-family:Arial,sans-serif; background:#f4f4f4;">
 
 <div style="width:500px; margin:100px auto; background:white; padding:20px;
 border-radius:10px; box-shadow:0px 0px 10px gray; text-align:center;">
-  <h2>📁 Upload a File</h2>
+  <h2>📤 Upload Your File</h2>
+
+<p class="status">
+
+Your file will be encrypted automatically before storage.
+
+</p>
   <a href=""/logout">Logout</a>
   <br><br>
   <form method="POST" enctype="multipart/form-data">

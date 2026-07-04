@@ -38,23 +38,35 @@ init_db()
 @app.route('/')
 def home():
     return render_template('home.html')
+from sqlite3 import IntegrityError
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+
+    error = None
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
 
-        # Connect and store user data
         conn = sqlite3.connect('secure_storage.db')
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
-        conn.commit()
-        conn.close()
-        return redirect(url_for('login'))
 
-        return "Signup successful 🎉 Now you can log in!"
+        try:
+            cursor.execute(
+                'INSERT INTO users (username, password) VALUES (?, ?)',
+                (username, password)
+            )
+            conn.commit()
+            conn.close()
 
-    return render_template('signup.html')
+            return redirect(url_for('login'))
+
+        except IntegrityError:
+            error = "Username already exists. Please choose another username."
+            conn.close()
+
+    return render_template('signup.html', error=error)
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None

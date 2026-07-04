@@ -1,0 +1,262 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef2f7;
+}
+
+/* Navbar */
+
+nav{
+    background:#2563eb;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+}
+
+nav h2{
+    font-size:26px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+
+    padding:8px 15px;
+
+border-radius:8px;
+
+transition:.3s;
+
+nav a:hover{
+
+background:rgba(255,255,255,.2);
+
+}
+}
+
+/* Cards */
+
+.container{
+    width:450px;
+    margin:80px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* Files page */
+
+.files-container{
+
+width:800px;
+
+margin:60px auto;
+
+}
+
+/* Heading */
+
+h1,h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* Input */
+
+input{
+    width:100%;
+    padding:12px;
+    margin:12px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+/* Button */
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+/* Link */
+
+a{
+    text-decoration:none;
+    color:#2563eb;
+}
+
+/* Home Buttons */
+
+.home-btn{
+    display:inline-block;
+    margin:15px;
+    padding:12px 30px;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+}
+
+.home-btn:hover{
+    background:#1d4ed8;
+}
+
+/* File Card */
+
+.file-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:white;
+
+    padding:18px;
+
+    margin:15px 0;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+/* Actions */
+
+.actions a{
+
+    margin-left:12px;
+
+    font-size:22px;
+}
+
+.download{
+
+    color:#16a34a;
+}
+
+.delete{
+
+    color:red;
+}
+
+.footer{
+
+text-align:center;
+
+margin-top:40px;
+
+color:gray;
+
+}
+
+.status{
+
+color:gray;
+
+font-size:14px;
+
+margin-top:5px;
+
+}
+
+.menu{
+
+position:relative;
+
+}
+
+.menu-btn{
+
+background:none;
+
+border:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+color:#555;
+
+width:auto;
+
+padding:5px 10px;
+
+}
+
+.menu-btn:hover{
+
+background:#f2f2f2;
+
+border-radius:50%;
+
+}
+
+.menu-content{
+
+display:none;
+
+position:absolute;
+
+right:0;
+
+top:35px;
+
+background:white;
+
+min-width:160px;
+
+border-radius:10px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+overflow:hidden;
+
+z-index:10;
+
+}
+
+.menu-content a{
+
+display:block;
+
+padding:12px;
+
+color:#333;
+
+text-decoration:none;
+
+}
+
+.menu-content a:hover{
+
+background:#f3f4f6;
+
+}
+
+.menu:hover .menu-content{
+
+display:block;
+
+}
