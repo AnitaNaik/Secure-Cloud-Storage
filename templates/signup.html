@@ -26,10 +26,7 @@
         <input type="text" name="username" required><br>
 
         <label>Password:</label><br>
-        <div class="password-box">
-    <input type="password" id="signupPassword" name="password" placeholder="Enter password" required>
-    <span class="toggle-password" onclick="togglePassword('signupPassword', this)">👁️</span>
-    </div>
+        <input type="password" name="password" placeholder="Enter password" required>
         <button type="submit">Register</button>
         {% if error %}
             <p style="color:red; margin-top:10px;">{{ error }}</p>
@@ -41,19 +38,5 @@
     <a href="/login">Already have an account? Login</a>
 
 </div>
-<script>
-function togglePassword(inputId, icon) {
-    const password = document.getElementById(inputId);
-
-    if (password.type === "password") {
-        password.type = "text";
-        icon.textContent = "🙈";
-    } else {
-        password.type = "password";
-        icon.textContent = "👁️";
-    }
-}
-</script>
-
 </body>
 </html>

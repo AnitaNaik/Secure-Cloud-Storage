@@ -19,10 +19,7 @@
       <h1>Login to Your Account</h1>
       <form method="POST">
         <input type="text" name="username" placeholder="Enter username" required><br>
-    <div class="password-box">
-        <input type="password" id="loginPassword" name="password" placeholder="Enter password" required>
-        <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
-    </div>
+         <input type="password" name="password" placeholder="Enter password" required>
         <button type="submit">Login</button>
     </form>
     {% if error %}
@@ -31,18 +28,5 @@
 
     <p>Don't have an account? <a href="/signup">Sign Up</a></p>
   </div>
-  <script>
-function togglePassword(inputId, icon) {
-    const password = document.getElementById(inputId);
-
-    if (password.type === "password") {
-        password.type = "text";
-        icon.textContent = "🙈";
-    } else {
-        password.type = "password";
-        icon.textContent = "👁️";
-    }
-}
-</script>
   </body>
 </html>
