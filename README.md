@@ -96,6 +96,9 @@ Anita Naik
 ### Login Page
 ![Login Page](screenshots/Login.png)
 
+### Options Page
+![Options Page](screenshots/Options.png)
+
 ### Upload Page
 ![Upload Page](screenshots/Upload.png)
 
