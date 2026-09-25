@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,19 +15,41 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-  <body>
-    <div class="container">
-      <h1>Login to Your Account</h1>
-      <form method="POST">
-        <input type="text" name="username" placeholder="Enter username" required><br>
-         <input type="password" name="password" placeholder="Enter password" required>
+
+<body>
+
+<div class="container">
+
+    <h1>Login to Your Account</h1>
+
+    <form method="POST">
+
+        <input type="text"
+               name="username"
+               placeholder="Enter username"
+               required><br>
+
+        <input type="password"
+               name="password"
+               placeholder="Enter password"
+               required>
+
         <button type="submit">Login</button>
+
     </form>
+
+    <!-- Shows login error -->
     {% if error %}
         <p style="color:red;">{{ error }}</p>
     {% endif %}
 
-    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
-  </div>
-  </body>
+    <p>
+        Don't have an account?
+        <a href="/signup">Sign Up</a>
+    </p>
+
+</div>
+
+</body>
 </html>
+

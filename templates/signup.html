@@ -15,6 +15,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <div class="container">
@@ -22,15 +23,23 @@
     <h2>Create Account</h2>
 
     <form method="POST">
+
         <label>Username:</label><br>
         <input type="text" name="username" required><br>
 
         <label>Password:</label><br>
-        <input type="password" name="password" placeholder="Enter password" required>
+        <input type="password"
+               name="password"
+               placeholder="Enter password"
+               required>
+
         <button type="submit">Register</button>
+
+        <!-- Shows username error if it already exists -->
         {% if error %}
             <p style="color:red; margin-top:10px;">{{ error }}</p>
         {% endif %}
+
     </form>
 
     <br>
@@ -38,5 +47,7 @@
     <a href="/login">Already have an account? Login</a>
 
 </div>
+
 </body>
 </html>
+

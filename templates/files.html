@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,35 +29,38 @@
 
     {% for file in files %}
 
-<div class="file-card">
+    <div class="file-card">
 
-    <div>
-        <h3>📄 {{ file }}</h3>
-        <p class="status">🔒 Encrypted</p>
-    </div>
+        <div>
+            <h3>📄 {{ file }}</h3>
+            <p class="status">🔒 Encrypted</p>
+        </div>
 
-    <div class="menu">
+        <div class="menu">
 
-        <button class="menu-btn">⋮</button>
+            <button class="menu-btn">⋮</button>
 
-        <div class="menu-content">
+            <div class="menu-content">
 
-            <a href="/download/{{ file }}">⬇ Download</a>
+                <!-- Download original file -->
+                <a href="/download/{{ file }}">⬇ Download</a>
 
-            <a href="/delete/{{ file }}"
-            onclick="return confirm('Delete this file?')">
+                <!-- Check whether file was changed -->
+                <a href="/verify/{{ file }}">✓ Verify Integrity</a>
 
-            🗑 Delete
+                <!-- Delete file -->
+                <a href="/delete/{{ file }}"
+                   onclick="return confirm('Delete this file?')">
+                    🗑 Delete
+                </a>
 
-            </a>
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
-{% endfor %}
+    {% endfor %}
 
     <br>
 
@@ -65,3 +70,4 @@
 
 </body>
 </html>
+
