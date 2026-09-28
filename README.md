@@ -106,12 +106,13 @@ Secure-Cloud-Storage/
 │   └── style.css
 │
 └── screenshots/
-    ├── home.png
-    ├── signup.png
-    ├── login.png
-    ├── upload.png
-    ├── files.png
-    └── Options.png
+    ├── Home.png
+    ├── Signup.png
+    |── Login.png
+    ├── Options.png
+    ├── Upload.png
+    ├── Files.png
+    └── File_Options.png
 ```
 
 ## Database
@@ -216,7 +217,7 @@ Logout
 
 ### File Options
 
-![File Options](screenshots/Options.png)
+![File Options](screenshots/File_Options.png)
 
 ## Live Demo
 
